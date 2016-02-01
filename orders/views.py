@@ -13,4 +13,5 @@ class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all().order_by('-purchase_date')
     serializer_class = OrderSerializer
     filter_backends = (filters.SearchFilter, )
-    search_fields = ('order_id', 'marketplace')
+    search_fields = ('order_id', 'marketplace', 'purchase_date',
+                     'items', 'amount', 'currency', 'shipping')

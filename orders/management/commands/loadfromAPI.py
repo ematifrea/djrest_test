@@ -4,6 +4,7 @@ import requests
 import xmltodict
 from orders.models import Order
 
+
 class Command(BaseCommand):
     help = 'Loads data into the db from http://test.lengow.io/orders-test.xml'
 

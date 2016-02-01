@@ -16,13 +16,17 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Order',
             fields=[
-                ('order_id', models.TextField(primary_key=True, serialize=False, unique=True)),
+                ('order_id', models.TextField(primary_key=True,
+                                              serialize=False,
+                                              unique=True)),
                 ('marketplace', models.TextField(blank=True, null=True)),
                 ('purchase_date', models.DateField(blank=True, null=True)),
                 ('items', models.IntegerField(blank=True, null=True)),
-                ('amount', models.DecimalField(blank=True, decimal_places=2, max_digits=10, null=True)),
+                ('amount', models.DecimalField(blank=True, decimal_places=2,
+                                               max_digits=10, null=True)),
                 ('currency', models.TextField(blank=True, null=True)),
-                ('shipping', models.DecimalField(blank=True, decimal_places=2, max_digits=10, null=True)),
+                ('shipping', models.DecimalField(blank=True, decimal_places=2,
+                                                 max_digits=10, null=True)),
             ],
         ),
     ]
