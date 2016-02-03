@@ -20,10 +20,8 @@ from rest_framework import routers
 
 from orders import views
 
-router = routers.DefaultRouter()
-router.register(r'orders', views.OrderViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include(router.urls)),
+    url(r'^orders/', include('orders.urls')),
 ]

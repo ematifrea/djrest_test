@@ -6,7 +6,8 @@ from django.db import models
 
 
 class Order(models.Model):
-    order_id = models.TextField(primary_key=True, unique=True)
+    id =  models.IntegerField(primary_key=True, unique=True, auto_created=True)
+    order_id = models.TextField(unique=True)
     marketplace = models.TextField(null=True, blank=True)
     purchase_date = models.DateField(null=True, blank=True)
     items = models.IntegerField(null=True, blank=True)
