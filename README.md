@@ -42,9 +42,11 @@ The Python interpreter version used in the project is 2.7.6.
     Display 1 order: /orders/detail/1/
     Search orders by model's fields and display result:
         /orders/list/?<param>=<value>
-        where <param> can be any combination of the model fields : id, orider_id,
+        where <param> can be any combination of the model fields : id, order_id,
         marketplace, purchase_date, items, amount,  currency, shipping
-    Create a new order:
+   (Without any UI touch:)
+    Create a new order: /orders/create/
+    Update an order: /update/create/
 
     
     
