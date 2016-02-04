@@ -23,5 +23,5 @@ from orders import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^orders/', include('orders.urls')),
+    url(r'^orders/', include('orders.urls', namespace='orders')),
 ]

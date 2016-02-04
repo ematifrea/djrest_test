@@ -1,16 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <title>List Orders</title>
 </head>
 <body>
-    <ul>
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <h3>List of orders</h3>
+    <div class="panel panel-default">
     {% for order in orders %}
-        <li>{{ order.id }}</li>
-        <li>{{ order.order_id }}</li>
+        <div class="panel-heading">Order id: {{ order.order_id }}
+            <a href="{% url 'orders:detail' pk=order.id %}" >View details</a>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">Marketplace: {{ order.marketplace }}</li>
+            <li class="list-group-item">Amount: {{ order.amount }}</li>
+            <li class="list-group-item">Currency : {{ order.currency }}</li>
+            <li class="list-group-item">Items: {{ order.items }}</li>
+        </ul>
     {% endfor %}
-    </ul>
-
+    <a  class="btn btn-primary" href="{% url 'orders:create' %}" >Add new order</a>
+    </div>
+  </div>
+</div>
 </body>
 </html>

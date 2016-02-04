@@ -1,18 +1,28 @@
-<!DOCTYPE html>
+{% load staticfiles %}
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <title>Detail</title>
 </head>
 <body>
-    <h1>Details on order {{ order.order_id }}</h1>
-    <ul>
-        <li>{{ order.marketplace }}</li>
-        <li>{{ order.items }}</li>
-        <li>{{ order.purchase_date }}</li>
-        <li>{{ order.amount }}</li>
-        <li>{{ order.currency }}</li>
-        <li>{{ order.shipping }}</li>
-    </ul>
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <h3>Details:</h3>
+    <div class="panel panel-default">
+        <div class="panel-heading">Order id: {{ order.order_id }}</div>
+        <ul class="list-group">
+            <li class="list-group-item">Marketplace: {{ order.marketplace }}</li>
+            <li class="list-group-item">Purchase date: {{ order.purchase_date }}</li>
+            <li class="list-group-item">Amount: {{ order.amount }}</li>
+            <li class="list-group-item">Currency : {{ order.currency }}</li>
+            <li class="list-group-item">Items: {{ order.items }}</li>
+            <li class="list-group-item">Shipping: {{ order.shipping }}</li>
+        </ul>
+    <a class="btn btn-primary" href="{% url 'orders:update' pk=order.id %}" >Edit order</a>
+    </div>
+  </div>
+</div>
 </body>
 </html>
