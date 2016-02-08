@@ -45,14 +45,13 @@ The Python interpreter version used in the project is 2.7.6.
         /orders/list/?<param>=<value>
         where <param> can be any combination of the model fields : id, order_id,
         marketplace, purchase_date, items, amount,  currency, shipping
-    (Without any UI touch:)
     Create a new order: /orders/create/
     Update an order: /orders/update/<pk>/
     
 #### 8. REST endpoints (modelViewSets):
 ##### GET / POST on /api/orders/, 
-##### GET, PUT, DELETE pe /api/orders/<pk>/, 
-##### GET /api/orders/?search=<text>/
+##### GET, PUT, DELETE pe /api/orders/pk/, 
+##### GET /api/orders/?search=text/
 
     
     
