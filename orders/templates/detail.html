@@ -1,12 +1,7 @@
-{% load staticfiles %}
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <title>Detail</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Detail Order{% endblock %}
+{% block content %}
 <div class="row">
   <div class="col-md-offset-2 col-md-8">
     <h3>Details:</h3>
@@ -24,5 +19,4 @@
     </div>
   </div>
 </div>
-</body>
-</html>
+{% endblock %}
